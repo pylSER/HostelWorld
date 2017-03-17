@@ -1,0 +1,10 @@
+#cover{
+    background: url("../cover.jpeg") no-repeat;
+    height: 580px;
+
+}
+
+#innercover{
+    background: rgba(0,0,0,.5);
+    height: 580px;
+}

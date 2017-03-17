@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:p="http://www.springframework.org/schema/p"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+        xmlns:context="http://www.springframework.org/schema/context" 
+        xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="  
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">  
+
+
+ <context:annotation-config />  
+  
+ <context:component-scan base-package="hostel" /> 
+ 
+ <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> 
+        
+
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <property name="configLocation">
+    <value>hibernate.cfg.xml</value>
+    </property>
+    
+    <property name="annotatedClasses">  
+  			 <list>
+  			 	<value>hostel.model.MemberEntity</value>
+  			 	<value>hostel.model.InnEntity</value>
+  			 	<value>hostel.model.CreditCardEntity</value>
+  			 	<value>hostel.model.ApplicationEntity</value>
+  			 	<value>hostel.model.MgrEntity</value>
+  			 	<value>hostel.model.BookItem</value>
+  			 	<value>hostel.model.OrderEntity</value>
+  			 	<value>hostel.model.CheckOrderEntity</value>
+  			 	<value>hostel.model.MyBookEntity</value>
+  			 	<value>hostel.model.PlanEntity</value>
+  			 	<value>hostel.model.Percentage</value>
+  			 	<value>hostel.model.InnBookItem</value>
+  			 	<value>hostel.model.CountEntity</value>
+  			 </list>  
+	</property> 
+</bean>
+
+
+
+</beans>
